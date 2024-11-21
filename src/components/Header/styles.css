@@ -1,0 +1,103 @@
+.headerDiv {
+  background-color: #fff;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.logoImg {
+  width: 100px;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.itemList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 80px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.items {
+  cursor: pointer;
+}
+
+.signup {
+  background-color: #012c1a;
+  border: none;
+  border-radius: 50px;
+  padding: 20px 60px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .headerDiv {
+    /* display: flex; */
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px 20px;
+    justify-content: space-between;
+    height: auto;
+    width: 90%;
+    border-radius: 100px;
+  }
+
+  .logo {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .logoImg {
+    width: 30px;
+  }
+
+  .itemList {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    position: absolute;
+    padding: 20px 10px;
+    top: 40px;
+    left: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.36 ease;
+    text-align: center;
+  }
+
+  .itemList.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
