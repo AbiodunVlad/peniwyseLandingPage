@@ -741,8 +741,40 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 40px 10px 0px 10px;
     margin-bottom: 50px;
+  }
+
+  .stars {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .starsTop {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .starsBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .letters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
   }
 
   .waitDiv {

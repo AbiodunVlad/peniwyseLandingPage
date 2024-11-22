@@ -215,6 +215,7 @@ export default function LandingPage() {
                 loop
                 autoplay
               />
+
               <dotlottie-player
                 src="https://lottie.host/c34fce31-5fba-496f-aff2-1eca16373147/rA8RPdpoq2.lottie"
                 background="transparent"
