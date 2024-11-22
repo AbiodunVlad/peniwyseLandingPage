@@ -1,6 +1,6 @@
 .headerDiv {
   background-color: #fff;
-  padding: 10px 30px;
+  padding: 5px 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,7 +58,7 @@
     flex-direction: row;
     align-items: center;
     background-color: #fff;
-    padding: 5px 20px;
+    padding: 3px 20px;
     justify-content: space-between;
     height: auto;
     width: 90%;

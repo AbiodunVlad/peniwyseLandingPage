@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import Header from "../../components/Header/Header";
-// import greenBG from "../../assets/images/greenBG.jpg";
-import heroImg from "../../assets/illustrationsIcons/heroImg.svg";
+import billAnim from "../../assets/illustrationsIcons/billAnim.svg";
+import centerPerson from "../../assets/illustrationsIcons/centerPerson.svg";
+import dollarAnim from "../../assets/illustrationsIcons/dollarAnim.svg";
+import quadAnim from "../../assets/illustrationsIcons/quadAnim.svg";
+import walletAnim from "../../assets/illustrationsIcons/walletAnim.svg";
 import featureImg1 from "../../assets/illustrationsIcons/featureImg1.svg";
 import featureImg2 from "../../assets/illustrationsIcons/featureImg2.svg";
 import featureImg3 from "../../assets/illustrationsIcons/featureImg3.svg";
@@ -11,7 +14,22 @@ import coins from "../../assets/illustrationsIcons/coins.svg";
 import FAQaccordion from "../../components/FAQaccordion/FAQaccordion";
 import Footer from "../../components/Footer/Footer";
 
+import "@dotlottie/player-component";
+import ComingSoon from "../ComingSoon/ComingSoon";
+
 export default function LandingPage() {
+  const [getStarted, SetGetStarted] = useState(false);
+
+  // const toggleForm = () => SetGetStarted(!getStarted);
+
+  const handlePopupOpen = () => {
+    SetGetStarted(true);
+  };
+
+  const handlePopupClose = () => {
+    SetGetStarted(false);
+  };
+
   return (
     <div>
       <div className="heroSection">
@@ -26,12 +44,24 @@ export default function LandingPage() {
             </p>
 
             <div className="btnDiv">
-              <button className="startBtn">Get Started</button>
+              <button className="startBtn" onClick={handlePopupOpen}>
+                Get Started
+              </button>
               <button className="joinBtn">Join Community</button>
             </div>
           </div>
           <div className="heroRight">
-            <img src={heroImg} alt="heroImg" className="heroImg" />
+            <div className="animDiv">
+              <img src={dollarAnim} alt="heroImg" className="dollarAnim" />
+              <img src={walletAnim} alt="heroImg" className="walletAnim" />
+            </div>
+
+            <img src={centerPerson} alt="heroImg" className="heroImg" />
+
+            <div className="animDiv">
+              <img src={billAnim} alt="heroImg" className="billAnim" />
+              <img src={quadAnim} alt="heroImg" className="quadAnim" />
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +98,7 @@ export default function LandingPage() {
             </div>
 
             <div className="singleFeature">
-              <img src={featureImg3} alt="" className="featureIcon" />
+              <img src={featureImg3} alt="" className="featureIcon1" />
               <p className="featureSubHead">Lock In and Earn with Safelock</p>
               <p className="featureBody">
                 Secure your savings by locking them away for a fixed duration.
@@ -148,22 +178,74 @@ export default function LandingPage() {
         }}
       >
         <div className="latestNews">
-          <p className="subHeading">
-            Get the latest news and updates about our app
-          </p>
-          <p className="subNumTxt">
-            Save Smarter, Spend Better, and Grow Your Future
-          </p>
+          <div className="stars">
+            <div className="starsTop">
+              <dotlottie-player
+                src="https://lottie.host/c34fce31-5fba-496f-aff2-1eca16373147/rA8RPdpoq2.lottie"
+                background="transparent"
+                speed="1"
+                style={{ width: "100px", height: "100px" }}
+                loop
+                autoplay
+              />
+              <dotlottie-player
+                src="https://lottie.host/c34fce31-5fba-496f-aff2-1eca16373147/rA8RPdpoq2.lottie"
+                background="transparent"
+                speed="1"
+                style={{ width: "100px", height: "100px" }}
+                loop
+                autoplay
+              />
+              <dotlottie-player
+                src="https://lottie.host/c34fce31-5fba-496f-aff2-1eca16373147/rA8RPdpoq2.lottie"
+                background="transparent"
+                speed="1"
+                style={{ width: "100px", height: "100px" }}
+                loop
+                autoplay
+              />
+            </div>
 
-          <div className="waitDiv">
-            <div className="waitlist-container">
-              <input placeholder="Enter email address" className="waitlist" />
-              <button className="joinWaitlist">Join Waitlist</button>
+            <div className="starsBottom">
+              <dotlottie-player
+                src="https://lottie.host/c34fce31-5fba-496f-aff2-1eca16373147/rA8RPdpoq2.lottie"
+                background="transparent"
+                speed="1"
+                style={{ width: "100px", height: "100px" }}
+                loop
+                autoplay
+              />
+              <dotlottie-player
+                src="https://lottie.host/c34fce31-5fba-496f-aff2-1eca16373147/rA8RPdpoq2.lottie"
+                background="transparent"
+                speed="1"
+                style={{ width: "100px", height: "100px" }}
+                loop
+                autoplay
+              />
+            </div>
+          </div>
+
+          <div className="letters">
+            <p className="subHeading preFooter">
+              Get the latest news and updates about our app
+            </p>
+            <p className="subNumTxt ">
+              Save Smarter, Spend Better, and Grow Your Future
+            </p>
+
+            <div className="waitDiv">
+              <div className="waitlist-container">
+                <input placeholder="Enter email address" className="waitlist" />
+                <button className="joinWaitlist">Join Waitlist</button>
+              </div>
             </div>
           </div>
           <img src={coins} alt="" className="coins" />
         </div>
       </div>
+
+      {getStarted && <ComingSoon onClose={handlePopupClose} />}
 
       <div>
         <Footer />
