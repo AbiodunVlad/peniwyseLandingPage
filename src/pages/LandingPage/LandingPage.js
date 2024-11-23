@@ -19,6 +19,51 @@ import ComingSoon from "../ComingSoon/ComingSoon";
 
 export default function LandingPage() {
   const [getStarted, SetGetStarted] = useState(false);
+  const [selectedNumber, setSelectedNumber] = useState(1);
+  const [animate, setAnimate] = useState(false);
+
+  const handleNumberClick = (number) => {
+    setSelectedNumber(number);
+    setAnimate(true);
+    setTimeout(() => setAnimate(false), 500);
+  };
+
+  const getSumNumStatement = () => {
+    switch (selectedNumber) {
+      case 1:
+        return {
+          head: "Sign Up and Set Your Goals",
+          txt: "Download the Peniwyse app and create an account. Set your savings goals, whether it's for a vacation, emergency fund, or a big purchase.",
+        };
+      case 2:
+        return {
+          head: "Connect Your Accounts",
+          txt: "Link your bank accounts and let Peniwyse analyze your spending. Gain insights into where your money goes and discover areas to save.",
+        };
+      case 3:
+        return {
+          head: "Track and Save Automatically",
+          txt: "Use our spending tracker to manage bills and subscriptions. Enable round-up savings to effortlessly contribute towards your goals with every purchase.",
+        };
+      case 4:
+        return {
+          head: "Lock and Grow",
+          txt: "Use Safelock to lock away savings for a set period and earn interest, helping you stay disciplined while growing your money.",
+        };
+      case 5:
+        return {
+          head: "Reach Your Goals",
+          txt: "Watch your savings grow and reach your financial goals faster—stress-free and on your terms.",
+        };
+      default:
+        return {
+          head: "Sign Up and Set Your Goals",
+          txt: "Download the Peniwyse app and create an account. Set your savings goals, whether it's for a vacation, emergency fund, or a big purchase.",
+        };
+    }
+  };
+
+  const subNumStatement = getSumNumStatement();
 
   // const toggleForm = () => SetGetStarted(!getStarted);
 
@@ -118,20 +163,22 @@ export default function LandingPage() {
 
             <div className="numbersDiv">
               <div className="numbers">
-                <p className="number1">1</p>
-                <p className="number">2</p>
-                <p className="number">3</p>
-                <p className="number">4</p>
-                <p className="number">5</p>
+                {[1, 2, 3, 4, 5].map((number) => (
+                  <p
+                    key={number}
+                    className={`number ${
+                      selectedNumber === number ? "active" : "inactive"
+                    }`}
+                    onClick={() => handleNumberClick(number)}
+                  >
+                    {number}
+                  </p>
+                ))}
               </div>
 
-              <div className="subNumStatement">
-                <p className="subNumHead">Sign Up and Set Your Goals</p>
-                <p className="subNumTxt">
-                  Download the Peniwyse app and create an account. Set your
-                  savings goals, whether it's for a vacation, emergency fund, or
-                  a big purchase.
-                </p>
+              <div className={`subNumStatement ${animate ? "animate" : ""}`}>
+                <p className="subNumHead">{subNumStatement.head}</p>
+                <p className="subNumTxt">{subNumStatement.txt}</p>
               </div>
             </div>
           </div>

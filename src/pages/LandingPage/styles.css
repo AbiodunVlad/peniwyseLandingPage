@@ -186,7 +186,7 @@ html {
 }
 
 .featureTop {
-  margin-bottom: 150px;
+  margin-bottom: 80px;
 }
 
 .featureTxt {
@@ -211,7 +211,7 @@ html {
 .coreFeatures {
   display: flex;
   flex-direction: row;
-  padding: 100px 300px 0 300px;
+  padding: 50px 300px 0 300px;
   justify-content: space-between;
 }
 
@@ -276,25 +276,48 @@ html {
   margin-bottom: 30px;
 }
 
-.number1 {
-  background-color: #202d37;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 100px;
-}
-
 .number {
   background-color: transparent;
   color: #202d37;
   border: 1px solid #202d37;
-  padding: 10px 15px;
+  padding: 10px 17px;
   border-radius: 100px;
+  cursor: pointer;
+}
+
+.number.active {
+  background-color: #202d37;
+  color: #fff;
+  border: none;
+}
+
+.number.inactive {
+  background-color: transparent;
+  color: #202d37;
+  border: 1px solid #202d37;
+}
+
+@keyframes rollin {
+  0% {
+    transform: translateY(-40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .subNumStatement {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.subNumStatement.animate {
+  animation: rollin 0.5s ease forwards;
 }
 
 .subNumHead {
@@ -519,7 +542,7 @@ html {
   .coreFeatures {
     display: flex;
     flex-direction: row;
-    padding: 100px 100px 0 100px;
+    padding: 50px 100px 0 100px;
     justify-content: space-between;
   }
 
