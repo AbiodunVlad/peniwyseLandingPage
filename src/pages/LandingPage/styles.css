@@ -1,3 +1,8 @@
+body,
+html {
+  overflow-x: hidden;
+}
+
 .heroSection {
   background-color: #012c1a;
   background-image: url("../../assets/images/bgImg2.png");
@@ -469,6 +474,117 @@
 .coins {
   width: 10%;
   align-self: self-end;
+}
+
+@media screen and (max-width: 1440px) {
+  .heroSection {
+    padding: 50px 20px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .heroBody {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .heroLeft,
+  .heroRight {
+    width: 100%;
+    text-align: start;
+  }
+
+  .heroStatement {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+
+  .heroSubtxt {
+    font-size: 28px;
+  }
+
+  .heroImg {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .btnDiv {
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .coreFeatures {
+    display: flex;
+    flex-direction: row;
+    padding: 100px 100px 0 100px;
+    justify-content: space-between;
+  }
+
+  .subNumTxt {
+    font-size: 20px;
+    text-align: center;
+    width: 80%;
+  }
+
+  .startBtn,
+  .joinBtn {
+    width: 100%;
+  }
+
+  .control {
+    width: 90%;
+
+    gap: 100px;
+  }
+
+  .controlMainImg {
+    width: 40%;
+  }
+
+  .controlBtnDiv {
+    display: flex;
+    gap: 20px;
+    width: 75%;
+  }
+
+  .controlStart {
+    width: 50%;
+    background-color: #01321d;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .controlJoin {
+    width: 50%;
+    background-color: transparent;
+    border: 1px solid #01321d;
+    border-radius: 30px;
+    color: #01321d;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .letters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 768px) {
